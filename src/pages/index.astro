@@ -1,4 +1,16 @@
 ---
+const clientName: string = 'polytechnic university';
+const currentYear = new Date();//.getFullYear();
+
+const user = {
+	name: 'Victor E. eagle',
+	age: 100,
+}
+
+const emojiSet = ['🍔', '🌭', '🍟', '🍕'];
+
+console.log(user.name);
+console.log(user.age);
 
 ---
 
@@ -8,13 +20,26 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>My Site</title>
+		<title> {clientName} </title>
 	</head>
-	<body>
+	<body id={clientName}>
 
 
 	     <a href="/">Home</a>
 		 <a href="/about">About</a>
+
+		 <p>EWU is not called {clientName}</p>
+		 <p>The mascot is {user.name} and is {user.age} years old</p>
+		 <p>{user.name} loves food. His favorites are: </p>
+
+		 <ul>
+			<!-- <li>Hamburger</li>-->
+			<!-- <li>fries</li>-->
+			{ emojiSet.map( emoji => <li> {emoji} </li> ) }
+		 </ul>
+
+		<!-- <img src="" alt={clientName}> -->
+		 <footer>Copyright {currentYear.getFullYear()} and {currentYear.getDate()}</footer>
 
 		<h1>My site</h1>
 	</body>
